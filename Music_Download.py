@@ -10,6 +10,7 @@ import datetime
 import threading
 import cloudmusic
 import Music_Funciton
+import subprocess
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtGui import QIcon, QPixmap
 from PySide2.QtCore import QObject, Signal, QUrl, QTimer
@@ -640,7 +641,10 @@ class Music_Dowload(QObject):
 
     def open_file(self):#打开文件夹
         try:
-            os.startfile(f'{os.getcwd()}/Music')
+            opener = "open" if sys.platform == "darwin" else "xdg-open"
+            subprocess.call([opener, f'{os.getcwd()}/Music'])
+
+            # os.startfile(f'{os.getcwd()}/Music')
         except FileNotFoundError:
             self.ui.show_label.setText('你还没下载呢！')
 
