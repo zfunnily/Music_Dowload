@@ -1132,16 +1132,16 @@ class Music_Dowload(QObject):
 
         name = self.ui.download_tableWidget.item(d_num-1,0).text()
         sing_name = self.ui.download_tableWidget.item(d_num-1,1).text()
+        album = self.ui.download_tableWidget.item(d_num-1,2).text()
 
         song_id = id_info[d_num - 1]
         song_url = f"http://music.163.com/song/media/outer/url?id={song_id}.mp3"
 
-        os.makedirs("Music",exist_ok=True)
-        Music_Funciton.music_download(song_url,name,sing_name)
+        Music_Funciton.music_download(song_url, name, sing_name, album)
 
-        self.ui.show_label.setText('下载成功！')
+        # self.ui.show_label.setText('下载成功！')
         time.sleep(1)
-        self.ui.show_label.setText('')
+        # self.ui.show_label.setText('')
 
 
     def download_music(self,source):#音乐下载
