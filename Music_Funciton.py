@@ -20,11 +20,11 @@ def music_download(song_url, name, sing_name=None, album=None):
     response = requests.get(song_url, headers=heades[random.randint(0, len(heades) - 1)])
     dirname = "Music/"
     filename = f"{name}.mp3"
-    if sing_name is not None:
-        dirname += sing_name + "/"
-        filename = f"{name}-{sing_name}.mp3"
     if album is not None:
         dirname += album + "/"
+    if sing_name is not None:
+        filename = f"{name}-{sing_name}.mp3"
+
 
     os.makedirs(dirname, exist_ok=True)
 
