@@ -10,7 +10,7 @@ fork https://github.com/Java-S12138/Music_Dowload
 $ pip3 install -r requirements.txt
 ```
 
-生成环境依赖文件requirements.txt
+生成环境依赖文件requirements.txt (忽略)
 ```shell
 $ pip3 freeze > requirements.txt
 ```
