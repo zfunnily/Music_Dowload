@@ -1,10 +1,31 @@
 # Music_Download
-由于上传Github时，不支持上传中文命名的文件
-本项目所需要的图片文件请到下面的网址下载，给您造成了不便，十分抱歉
+fork https://github.com/Java-S12138/Music_Dowload
 
-https://wwx.lanzoux.com/b01boa0eb
+## 环境
+* mac
+* python3.8
 
-软件使用说明:
-https://syjun.vip/archives/start.html
+安装依赖
+```shell
+$ pip3 install -r requirements.txt
+```
 
-个人博客：https://www.syjun.vip
+生成环境依赖文件requirements.txt
+```shell
+$ pip3 freeze > requirements.txt
+```
+
+启动
+```shell
+$ python3 Music_Download.py
+```
+
+## 使用
+以下载罗大佑的专辑《之乎者也》为例：
+* 《之乎者也》网易云web链接 https://music.163.com/#/album?id=10855
+* 复制id参数`10855`到`歌单专辑`->`歌单｜专辑ID`， 点击搜索歌单
+* 看到搜索结果
+* 可以通过序号来下载单首音乐，也可以点击`下载全部音乐` 来下载改专辑的全部音乐
+
+这个例子是一个抛砖引玉作用，还有其他功能可以慢慢摸索
+
